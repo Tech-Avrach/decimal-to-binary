@@ -27,9 +27,36 @@ int decToBinary(int decNum) {
     return ans;
 }
 
+/**
+ * Converts a binary number to its decimal representation.
+ * 
+ * The function takes a binary number (represented as an integer)
+ * and returns its decimal equivalent.
+ * 
+ * For example, binaryToDec(110010) returns 50.
+ * 
+ * @param binNum The binary number to convert.
+ * @return The decimal representation of the binary number.
+ */
+int binaryToDec(int binNum) {
+    int ans = 0, pow = 1;
+
+    while(binNum > 0) {
+        int rem = binNum % 10;
+        ans += (rem * pow);
+        
+        binNum /= 10;
+        pow *= 2;
+    }
+
+    return ans;
+}
+
 int main () {
 
     cout << decToBinary(50) << endl;
+
+    cout << binaryToDec(110010) << endl;
 
 
     return 0;
